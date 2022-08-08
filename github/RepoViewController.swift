@@ -93,5 +93,18 @@ class RepoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "Show" else {return}
+        
+        let navController = segue.destination as! UINavigationController
+        
+       let todoViewController = navController.topViewController as! DetailViewController
+        guard let newIndexPath = stockResultFeed.indexPathForSelectedRow else {return}
+        let selectedUser: User = feedItems[newIndexPath.row] as! User
+       todoViewController.user = selectedUser
+    }
+    
+    
 
 }

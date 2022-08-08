@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D5305F428A1B85C006B8DB4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5305F328A1B85C006B8DB4 /* DetailViewController.swift */; };
 		1D93953A28A14DCF00B0CE90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D93953928A14DCF00B0CE90 /* GoogleService-Info.plist */; };
 		1D93953D28A14E8C00B0CE90 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1D93953C28A14E8C00B0CE90 /* FirebaseAuth */; };
 		1D93953F28A14E8C00B0CE90 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1D93953E28A14E8C00B0CE90 /* FirebaseAuthCombine-Community */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D5305F328A1B85C006B8DB4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1D93953928A14DCF00B0CE90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1D93954028A15F1600B0CE90 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1D93954228A1632A00B0CE90 /* RepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				1DC3CCF628A1441800067001 /* SceneDelegate.swift */,
 				1DC3CCF828A1441800067001 /* ViewController.swift */,
 				1DC3CCFA28A1441800067001 /* Main.storyboard */,
+				1D5305F328A1B85C006B8DB4 /* DetailViewController.swift */,
 				1DC3CCFD28A1441A00067001 /* Assets.xcassets */,
 				1DC3CCFF28A1441A00067001 /* LaunchScreen.storyboard */,
 				1DC3CD0228A1441A00067001 /* Info.plist */,
@@ -288,6 +291,7 @@
 				1D93954328A1632B00B0CE90 /* RepoViewController.swift in Sources */,
 				1D93954128A15F1600B0CE90 /* User.swift in Sources */,
 				1D93954528A1716E00B0CE90 /* FeedModel.swift in Sources */,
+				1D5305F428A1B85C006B8DB4 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
