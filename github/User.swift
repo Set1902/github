@@ -6,13 +6,16 @@
 //
 
 import Foundation
-
+import UIKit
 var login1: String = ""
 
 class User: NSObject {
     
     //properties of a stock
-    var login: String?
+    var name: String?
+    var forks: Int?
+    var watchers: Int?
+    var description1: String?
 
     //empty constructor
     
@@ -23,10 +26,12 @@ class User: NSObject {
     
     //construct with @name and @price parameters
     
-    init(login: String) {
+    init(name: String, forks: Int, watchers: Int, description: String) {
         
-        self.login = login
-
+        self.name = name
+        self.forks = forks
+        self.watchers = watchers
+        self.description1 = description
         
     }
     

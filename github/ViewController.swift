@@ -10,7 +10,11 @@ import FirebaseAuth
 import Firebase
 class ViewController: UIViewController {
 
-    
+    private func showCodeValidVC () {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let dvc = storyboard.instantiateViewController(withIdentifier: "Check") as! RepoViewController
+        self.present(dvc, animated: true)
+    }
     
     @IBOutlet weak var button: UIButton!
     
@@ -62,7 +66,7 @@ class ViewController: UIViewController {
                       
                       guard let oauthCredential = authResult?.credential as? OAuthCredential else { return }
                       
-                      
+                      self.showCodeValidVC()
                       
                   // GitHub OAuth access token can also be retrieved by:
                   // oauthCredential.accessToken
