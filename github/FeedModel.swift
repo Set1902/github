@@ -66,12 +66,15 @@ class FeedModel: NSObject, URLSessionDataDelegate {
                     let forks = jsonElement["forks"] as? Int
                     let watchers = jsonElement["watchers"] as? Int
                     let description = jsonElement["description"] as? String
+                let owner = jsonElement["owner"] as? NSDictionary
+                let image = owner!["avatar_url"] as? String
                 
                     
                     stock.name = name
                     stock.forks = forks
                     stock.watchers = watchers
                     stock.description1 = description
+                stock.image = image
                     
                     
                    

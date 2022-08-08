@@ -12,7 +12,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     
     @IBOutlet weak var ImageView: UIImageView!
     
-    @IBOutlet weak var Nasv: UILabel!
     
     @IBOutlet weak var Opis: UILabel!
     
@@ -47,6 +46,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
             forks.text = String("forks: \(user1.forks!)")
             watches.text = String("watches: \(user1.watchers!)")
             
+            setImage(from: user1.image!)
+
         }
         
         
@@ -62,5 +63,19 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func setImage(from url: String) {
+        guard let imageURL = URL(string: url) else { return }
+
+            // just not to cause a deadlock in UI!
+        DispatchQueue.global().async {
+            guard let imageData = try? Data(contentsOf: imageURL) else { return }
+
+            let image = UIImage(data: imageData)
+            DispatchQueue.main.async {
+                self.ImageView.image = image
+            }
+        }
+    }
 
 }
