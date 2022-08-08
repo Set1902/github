@@ -45,6 +45,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
             }
             forks.text = String("forks: \(user1.forks!)")
             watches.text = String("watches: \(user1.watchers!)")
+            Author.text = "Author: \(login1)"
             
             setImage(from: user1.image!)
 
