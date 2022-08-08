@@ -7,19 +7,23 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     
+    @IBOutlet weak var ImageView: UIImageView!
     
     @IBOutlet weak var Nasv: UILabel!
     
     @IBOutlet weak var Opis: UILabel!
     
     
+    @IBOutlet weak var Author: UILabel!
     
     
+    @IBOutlet weak var forks: UILabel!
     
     
+    @IBOutlet weak var watches: UILabel!
     
     
     var user: User?
@@ -32,9 +36,16 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
-        if let user = user {
-            
-            
+        if let user1 = user {
+            self.title = user1.name!
+                        if user1.description1 == nil {
+                Opis.text = "Описания нет"
+            } else {
+                Opis.text = user1.description1!
+
+            }
+            forks.text = String("forks: \(user1.forks!)")
+            watches.text = String("watches: \(user1.watchers!)")
             
         }
         

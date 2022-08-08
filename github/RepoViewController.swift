@@ -92,10 +92,8 @@ class RepoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         feedModel.downloadItems()
     }
     
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "Show" else {return}
+        guard segue.identifier == "Show1" else {return}
         
         let navController = segue.destination as! UINavigationController
         
@@ -105,6 +103,12 @@ class RepoViewController: UIViewController, UITableViewDataSource, UITableViewDe
        todoViewController.user = selectedUser
     }
     
+    
+    @IBAction func unwindToRepo(unwindSegue: UIStoryboardSegue) {
+
+        
+        
+    }
     
 
 }
