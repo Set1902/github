@@ -92,7 +92,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         let item: Commit = feedItems[indexPath.row] as! Commit
         
         
-        let alert3 = UIAlertController(title: "\(item.Author!)", message: "Message: \(item.comMess!) Date: \(item.Date!)", preferredStyle: UIAlertController.Style.alert)
+        let alert3 = UIAlertController(title: "\(item.Author!)", message: "Message: \(item.comMess!) \n Date: \(item.Date!) \n Full hash: \(item.sha!)", preferredStyle: UIAlertController.Style.alert)
         alert3.addAction(UIAlertAction(title: "Готово", style: UIAlertAction.Style.cancel, handler: nil))
         present(alert3, animated: true, completion: nil)
     }
