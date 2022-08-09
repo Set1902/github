@@ -8,6 +8,9 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+
+
+
 class ViewController: UIViewController {
 
     private func showCodeValidVC () {
@@ -30,10 +33,7 @@ class ViewController: UIViewController {
         
         let name = defaults.string(forKey: "login")
         
-        if name == nil {
-            login1 = name!
-            showCodeValidVC()
-        }
+        
         
         
                 
@@ -42,10 +42,7 @@ class ViewController: UIViewController {
 
     
     func hi() {
-        provider.customParameters = [
-          "allow_signup": "false"
-        ]
-        provider.scopes = ["user:email"]
+        
         
         provider.getCredentialWith(nil) { credential, error in
               if error != nil {
@@ -92,8 +89,8 @@ class ViewController: UIViewController {
     
     @IBAction func buttonTapped(_ sender: Any) {
         
-        
         hi()
+        
         
     }
     
@@ -102,7 +99,11 @@ class ViewController: UIViewController {
     
     
     
-    
+    @IBAction func unwindToView(unwindSegue: UIStoryboardSegue) {
+
+        
+        
+    }
     
     
     

@@ -33,7 +33,11 @@ class RepoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Do any additional setup after loading the view.
         
         Lable.text = login1
+        
         up1()
+        
+        
+        
     }
     
 
@@ -74,7 +78,7 @@ class RepoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     
-    func itemsDownloaded(items: NSArray) {
+    func itemsDownloaded1(items: NSArray) {
         
         feedItems = items
         self.stockResultFeed.reloadData()
@@ -116,8 +120,12 @@ class RepoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         
         
-        
-        //ogin1 = ""
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
         
         
         

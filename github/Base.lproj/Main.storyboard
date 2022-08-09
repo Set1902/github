@@ -35,7 +35,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="938" y="11"/>
+            <point key="canvasLocation" x="1623" y="11"/>
         </scene>
         <!--Repo View Controller-->
         <scene sceneID="406-Bj-GnI">
@@ -75,6 +75,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Выход"/>
                                 <connections>
                                     <action selector="exitButtonTapped:" destination="rFr-xn-joD" eventType="touchUpInside" id="0uX-Eq-e0m"/>
+                                    <segue destination="s9g-ls-ec0" kind="unwind" unwindAction="unwindToViewWithUnwindSegue:" id="tSF-LO-gjr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -97,6 +98,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLH-Nv-a2f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="s9g-ls-ec0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2938.4615384615386" y="10.663507109004739"/>
         </scene>

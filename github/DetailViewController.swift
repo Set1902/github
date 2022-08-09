@@ -14,7 +14,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     
     @IBOutlet weak var stockResult: UITableView!
     
-    
+
     
     
     
@@ -65,7 +65,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     
     
     
-    
+    struct Error1: Decodable {
+        var massege: String
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -144,6 +146,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
                     print("Error")
                 }else {
                     print("stocks downloaded")
+                    print(data)
                     self.parseJSON(data!)
                 }
                 
@@ -157,9 +160,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
     func parseJSON(_ data:Data) {
             
             var jsonResult = NSArray()
+
+        var jsonResult2 = NSArray()
             
             do{
-                jsonResult = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.allowFragments) as! NSArray
+
+                jsonResult = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.allowFragments) as? NSArray ?? jsonResult2
+                
                 
             } catch let error as NSError {
                 print(error)

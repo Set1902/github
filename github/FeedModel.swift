@@ -8,7 +8,7 @@
 import Foundation
 
 protocol FeedModelProtocol: class {
-    func itemsDownloaded(items: NSArray)
+    func itemsDownloaded1(items: NSArray)
 }
 
 
@@ -87,8 +87,8 @@ class FeedModel: NSObject, URLSessionDataDelegate {
             }
             
             DispatchQueue.main.async(execute: { () -> Void in
-                
-                self.delegate.itemsDownloaded(items: stocks)
+                print(self.delegate)
+                self.delegate.itemsDownloaded1(items: stocks)
                 
             })
         }
