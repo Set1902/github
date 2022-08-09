@@ -7,7 +7,15 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UITableViewDataSource, UITableViewDelegate {
+    
+    
+    var feedItems: NSArray = NSArray()
+    
+    @IBOutlet weak var stockResult: UITableView!
+    
+    
+    
     
     
     @IBOutlet weak var ImageView: UIImageView!
@@ -34,7 +42,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
 
         // Do any additional setup after loading the view.
         
-        
+        self.stockResult.dataSource = self
         if let user1 = user {
             getCommits(user: user1)
             self.title = user1.name!
@@ -54,6 +62,36 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         
         
     }
+    
+    
+    
+    
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Return the number of feed items
+        return feedItems.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // Retrieve cell
+        let cellIdentifier: String = "Shew"
+        let myCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)!
+        
+        let item: Commit = feedItems[indexPath.row] as! Commit
+        
+
+        
+        
+        // Get references to labels of cell
+        myCell.textLabel!.text = item.sha!
+        
+        return myCell
+    }
+    
+    
     
 
     /*
@@ -149,7 +187,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
                 stock.Date = date
                     
                     
-                   print("sha\(sha)")
+                   
                     
                 
                 
@@ -157,8 +195,20 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
                 
             }
             
+        DispatchQueue.main.async(execute: { () -> Void in
+            
+            self.itemsDownloaded(items: stocks)
+            
+        })
             
         }
+    
+    
+    func itemsDownloaded(items: NSArray) {
+        
+        feedItems = items
+        self.stockResult.reloadData()
+    }
     
 
 }
