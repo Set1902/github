@@ -110,5 +110,18 @@ class RepoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    
+    
+    @IBAction func exitButtonTapped(_ sender: Any) {
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
 
 }
