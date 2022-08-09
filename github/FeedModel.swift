@@ -68,6 +68,7 @@ class FeedModel: NSObject, URLSessionDataDelegate {
                     let description = jsonElement["description"] as? String
                 let owner = jsonElement["owner"] as? NSDictionary
                 let image = owner!["avatar_url"] as? String
+                let login = owner!["login"] as? String
                 
                     
                     stock.name = name
@@ -75,7 +76,7 @@ class FeedModel: NSObject, URLSessionDataDelegate {
                     stock.watchers = watchers
                     stock.description1 = description
                 stock.image = image
-                    
+                stock.login = login
                     
                    
                     

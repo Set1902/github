@@ -36,6 +36,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
         
         
         if let user1 = user {
+            getCommits(user: user1)
             self.title = user1.name!
                         if user1.description1 == nil {
                 Opis.text = "Описания нет"
@@ -78,5 +79,86 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UITextViewDel
             }
         }
     }
+    
+    
+    
+    
+    
+    
+    func getCommits(user: User) {
+        
+        
+        
+        let urlPath = "https://api.github.com/repos/\(user.login!)/\(user.name!)/commits"
+        
+
+            
+            let url: URL = URL(string: urlPath)!
+            let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
+            
+            let task = defaultSession.dataTask(with: url) { (data, response, error) in
+                
+                if error != nil {
+                    print("Error")
+                }else {
+                    print("stocks downloaded")
+                    self.parseJSON(data!)
+                }
+                
+            }
+            
+            task.resume()
+        
+    }
+    
+    
+    func parseJSON(_ data:Data) {
+            
+            var jsonResult = NSArray()
+            
+            do{
+                jsonResult = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.allowFragments) as! NSArray
+                
+            } catch let error as NSError {
+                print(error)
+                
+            }
+            
+            var jsonElement = NSDictionary()
+            let stocks = NSMutableArray()
+            print(jsonResult)
+            for i in 0 ..< jsonResult.count
+            {
+                
+                jsonElement = jsonResult[i] as! NSDictionary
+                
+                let stock = Commit()
+                
+                //the following insures none of the JsonElement values are nil through optional binding
+                  let sha = jsonElement["sha"] as? String
+                    let commit = jsonElement["commit"] as? NSDictionary
+                let message = commit!["message"] as? String
+                    let author = commit!["author"] as? NSDictionary
+                let name = author!["name"] as? String
+                let date = author!["date"] as? String
+                
+                    
+                stock.sha = sha
+                stock.comMess = message
+                stock.Author = name
+                stock.Date = date
+                    
+                    
+                   print("sha\(sha)")
+                    
+                
+                
+                stocks.add(stock)
+                
+            }
+            
+            
+        }
+    
 
 }

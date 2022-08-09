@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D5305F428A1B85C006B8DB4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5305F328A1B85C006B8DB4 /* DetailViewController.swift */; };
+		1D89BDC828A2899700D266AD /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D89BDC728A2899700D266AD /* Commit.swift */; };
 		1D93953A28A14DCF00B0CE90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D93953928A14DCF00B0CE90 /* GoogleService-Info.plist */; };
 		1D93953D28A14E8C00B0CE90 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1D93953C28A14E8C00B0CE90 /* FirebaseAuth */; };
 		1D93953F28A14E8C00B0CE90 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1D93953E28A14E8C00B0CE90 /* FirebaseAuthCombine-Community */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		1D5305F328A1B85C006B8DB4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1D89BDC728A2899700D266AD /* Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commit.swift; sourceTree = "<group>"; };
 		1D93953928A14DCF00B0CE90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1D93954028A15F1600B0CE90 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1D93954228A1632A00B0CE90 /* RepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				1D93954028A15F1600B0CE90 /* User.swift */,
 				1D93954228A1632A00B0CE90 /* RepoViewController.swift */,
 				1D93954428A1716E00B0CE90 /* FeedModel.swift */,
+				1D89BDC728A2899700D266AD /* Commit.swift */,
 			);
 			path = github;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D89BDC828A2899700D266AD /* Commit.swift in Sources */,
 				1DC3CCF928A1441800067001 /* ViewController.swift in Sources */,
 				1DC3CCF528A1441800067001 /* AppDelegate.swift in Sources */,
 				1DC3CCF728A1441800067001 /* SceneDelegate.swift in Sources */,
