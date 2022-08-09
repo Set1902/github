@@ -20,13 +20,22 @@ class ViewController: UIViewController {
     
     var provider = OAuthProvider(providerID: "github.com")
     
-    
+    let defaults = UserDefaults.standard
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let name = defaults.string(forKey: "login")
+        
+        if name == nil {
+            login1 = name!
+            showCodeValidVC()
+        }
+        
+        
                 
     }
 
@@ -43,7 +52,7 @@ class ViewController: UIViewController {
                 // Handle error.
               }
               if credential != nil {
-                  Auth.auth().signIn(with: credential!) { authResult, error in
+                  Auth.auth().signIn(with: credential!) { [self] authResult, error in
                   if error != nil {
                     // Handle error.
                   }
@@ -62,7 +71,9 @@ class ViewController: UIViewController {
                       login1 = login!
                       
                       print(login1)
+                      //UserDefaults.standard.set(login1, forKey: "Key")  //Integer
                       
+                      self.defaults.set(login1, forKey: "login")
                       
                       guard let oauthCredential = authResult?.credential as? OAuthCredential else { return }
                       
